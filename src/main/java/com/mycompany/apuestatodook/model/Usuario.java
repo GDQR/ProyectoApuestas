@@ -26,7 +26,14 @@ public class Usuario{
     public Usuario(){
         
     }
-  
+    
+    public Usuario(String usuario, String contrasenia, double dinero, String tipo) {
+        this.usuario = usuario;
+        this.contrasenia = contrasenia;
+        this.dinero = dinero;
+        this.tipo = tipo;
+    }
+      
     public Usuario(int IDusuario, String usuario, String contrasenia, double dinero, String tipo) {
         this.IDusuario = IDusuario;
         this.usuario = usuario;
