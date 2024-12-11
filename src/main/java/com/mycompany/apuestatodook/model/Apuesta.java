@@ -1,17 +1,41 @@
 package com.mycompany.apuestatodook.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
+
+@Entity
+@Table (name="Apuesta")
 public class Apuesta {
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="id_apuesta")
     private int idApuesta;
     private int monto;
+    @Column(length=255)
     private String por_quien;
+    private int fk_id_resultado;
+    @Column(name="fk_id_usuario")
     private int idUsuario;
+    @Column(name="fk_id_partido")
     private int idPartido;
     private char estado;
-    private int fk_id_resultado;
+    @Transient
     private String local;
+    @Transient
     private String visitante;
+    @Transient
     private String fecha;
+    
+    public Apuesta(){
+        
+    }
 
     public Apuesta(String local, String visitante, String fecha, int monto, String por_quien) {
         this.local = local;

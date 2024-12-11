@@ -4,14 +4,30 @@
  */
 package com.mycompany.apuestatodook.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 /**
  *
  * @author Tango
  */
+
+@Entity
+@Table (name="Persona")
 public class Persona {
+     
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id_persona;
+    @Column(length=255)
     private String dni;
+    @Column(length=255)
     private String nombre;
+    @Column(length=255)
     private String apellido;
     private int edad;
     private int fk_id_ususario;
@@ -47,7 +63,11 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
+    
+    public Persona(){
+        
+    }
+    
     public Persona(int id_persona, String dni, String nombre, String apellido, int edad, int fk_id_ususario) {
         this.id_persona = id_persona;
         this.dni = dni;

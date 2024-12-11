@@ -1,11 +1,29 @@
 package com.mycompany.apuestatodook.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
+
+@Entity
+@Table (name="Partido")
 public class Partido {
-    private String local;
-    private String visitante;
-    private String fecha;
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="id_partido")
     private int idPartido;
+    @Column(length=255)
+    private String local;
+    @Column(length=255)
+    private String visitante;
+    @Column(length=255)
+    private String fecha;
+    @Transient
     private Resultado resultado;
 
     public Resultado getResultado() {
@@ -14,6 +32,10 @@ public class Partido {
     
     public void setResultado(Resultado resultado) {
     this.resultado = resultado;
+    }
+    
+    public Partido(){
+        
     }
 
     public Partido(String local, String visitante, String fecha, int idPartido) {
