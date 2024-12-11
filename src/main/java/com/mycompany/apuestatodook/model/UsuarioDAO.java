@@ -17,7 +17,7 @@ public class UsuarioDAO {
         List<Usuario> usuarios = new LinkedList();
         try(Session session = HibernateUtil.getSessionFactory().getCurrentSession() ){
             session.beginTransaction();
-            usuarios = session.createQuery("FROM Usuarios", Usuario.class).getResultList();
+            usuarios = session.createQuery("FROM Usuario", Usuario.class).getResultList();
             session.getTransaction().commit();
         } catch(Exception ex){
             throw new RuntimeException(ex);
@@ -114,7 +114,7 @@ private Usuario rsRowToUsuario(ResultSet rs) throws SQLException {
         double dinero = 0.0;
         try(Session session = HibernateUtil.getSessionFactory().getCurrentSession() ){
             session.beginTransaction();
-            dinero = session.createQuery("SELECT dinero FROM usuario WHERE IDusuario= ?1", int.class)
+            dinero = session.createQuery("SELECT dinero FROM Usuario WHERE IDusuario= ?1", int.class)
                     .setParameter(1, Id)
                     .getSingleResult();
             session.getTransaction().commit();
@@ -148,7 +148,7 @@ private Usuario rsRowToUsuario(ResultSet rs) throws SQLException {
     public void updateDinero(Usuario usuario) {
         try(Session session = HibernateUtil.getSessionFactory().getCurrentSession() ){
             session.beginTransaction();
-            session.createQuery("UPDATE usuario SET dinero = ?1 WHERE IDusuario = ?2", Usuario.class)
+            session.createQuery("UPDATE Usuario SET dinero = ?1 WHERE IDusuario = ?2", Usuario.class)
                     .setParameter(1, usuario.getDinero())
                     .setParameter(2, usuario.getIDusuario())
                     .executeUpdate();
