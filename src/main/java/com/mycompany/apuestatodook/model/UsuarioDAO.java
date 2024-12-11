@@ -60,7 +60,7 @@ private Usuario rsRowToUsuario(ResultSet rs) throws SQLException {
 }
 
     public int add(String usuario, String contrasenia, String rol) {
-        String query = "INSERT INTO usuario (usuario, contrasenia) VALUES (?, ?, ?)";
+        String query = "INSERT INTO usuario (usuario, contrasenia, rol) VALUES (?, ?, ?)";
         try (Connection con = ConnectionPool.getInstance().getConnection(); PreparedStatement preparedStatement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, usuario);
             preparedStatement.setString(2, contrasenia);
