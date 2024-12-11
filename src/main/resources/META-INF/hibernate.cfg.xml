@@ -10,6 +10,10 @@
         <property name="hibernate.show_sql">true</property>
         <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
 
-        <mapping resource="book.hbm.xml" />
+        <mapping resource="com.mycompany.apuestatodook.Apuesta" />
+        <mapping resource="com.mycompany.apuestatodook.Partido" />
+        <mapping resource="com.mycompany.apuestatodook.Persona" />
+        <mapping resource="com.mycompany.apuestatodook.Resultado" />
+        <mapping resource="com.mycompany.apuestatodook.Usuario" />
     </session-factory>
 </hibernate-configuration>
