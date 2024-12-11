@@ -44,7 +44,7 @@ public class UsuarioNuevoServlet extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/jsp/crearUsuario.jsp").forward(request, response);
         } else {
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-            int idUsuario = usuarioDAO.add(usuario, password);
+            int idUsuario = usuarioDAO.add(usuario, password, "user");
             PersonaDAO personaDAO = new PersonaDAO();
             personaDAO.agregarPersona(idUsuario, nombre, apellido, edad, dni);
             request.getRequestDispatcher("/WEB-INF/jsp/usuarioCreado.jsp").forward(request, response);
