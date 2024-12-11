@@ -10,10 +10,10 @@
         <property name="hibernate.show_sql">true</property>
         <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
 
-        <mapping resource="com.mycompany.apuestatodook.Apuesta" />
-        <mapping resource="com.mycompany.apuestatodook.Partido" />
-        <mapping resource="com.mycompany.apuestatodook.Persona" />
-        <mapping resource="com.mycompany.apuestatodook.Resultado" />
-        <mapping resource="com.mycompany.apuestatodook.Usuario" />
+        <mapping class="com.mycompany.apuestatodook.model.Apuesta" />
+        <mapping class="com.mycompany.apuestatodook.model.Partido" />
+        <mapping class="com.mycompany.apuestatodook.model.Persona" />
+        <mapping class="com.mycompany.apuestatodook.model.Resultado" />
+        <mapping class="com.mycompany.apuestatodook.model.Usuario" />
     </session-factory>
 </hibernate-configuration>
