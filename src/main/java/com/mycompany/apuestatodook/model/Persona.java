@@ -68,6 +68,14 @@ public class Persona {
         
     }
     
+    public Persona(int idUsuario, String nombre, String apellido, int edad, String dni){
+        this.fk_id_ususario = idUsuario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.dni = dni;
+    }
+    
     public Persona(int id_persona, String dni, String nombre, String apellido, int edad, int fk_id_ususario) {
         this.id_persona = id_persona;
         this.dni = dni;
