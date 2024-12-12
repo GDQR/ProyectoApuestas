@@ -17,7 +17,7 @@ public class PartidoDAO {
         
     }
      
-        public void add(Partido partido) {
+    public void add(Partido partido) {
         partidos.add(partido);
     }
         

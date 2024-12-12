@@ -178,31 +178,35 @@ CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `usuario` varchar(255) NOT NULL,
   `contrasenia` varchar(255) NOT NULL,
-  `dinero` decimal(10,2) DEFAULT 0.00
+  `dinero` decimal(10,2) DEFAULT 0.00,
+  `rol` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `usuario`, `contrasenia`, `dinero`) VALUES
-(1, 'Usuario1', 'Contraseña1', 100.00),
-(2, 'Usuario2', 'Contraseña2', 0.00),
-(3, 'Usuario3', 'Contraseña3', 0.00),
-(4, 'Usuario4', 'Contraseña4', 0.00),
-(5, 'Usuario5', 'Contraseña5', 0.00),
-(6, 'Usuario6', 'Contraseña6', 0.00),
-(7, 'Usuario7', 'Contraseña7', 0.00),
-(8, 'Usuario8', 'Contraseña8', 0.00),
-(9, 'Usuario9', 'Contraseña9', 0.00),
-(10, 'Usuario10', 'Contraseña10', 0.00),
-(11, 'Usuario11', 'Contraseña11', 0.00),
-(12, 'Usuario12', 'Contraseña12', 0.00),
-(13, 'Usuario13', 'Contraseña13', 0.00),
-(14, 'Usuario14', 'Contraseña14', 0.00),
-(15, 'Usuario15', 'Contraseña15', 0.00),
-(21, 'ianalan', 'contraseña', 0.00),
-(22, '1', '1', 3000.00);
+INSERT INTO `usuario` (`id_usuario`, `usuario`, `contrasenia`, `dinero`, `rol`) VALUES
+(1, 'Usuario1', 'Contraseña1', 100.00, 'user'),
+(2, 'Usuario2', 'Contraseña2', 0.00, 'user'),
+(3, 'Usuario3', 'Contraseña3', 0.00, 'user'),
+(4, 'Usuario4', 'Contraseña4', 0.00, 'user'),
+(5, 'Usuario5', 'Contraseña5', 0.00, 'user'),
+(6, 'Usuario6', 'Contraseña6', 0.00, 'user'),
+(7, 'Usuario7', 'Contraseña7', 0.00, 'user'),
+(8, 'Usuario8', 'Contraseña8', 0.00, 'user'),
+(9, 'Usuario9', 'Contraseña9', 0.00, 'user'),
+(10, 'Usuario10', 'Contraseña10', 0.00, 'user'),
+(11, 'Usuario11', 'Contraseña11', 0.00, 'user'),
+(12, 'Usuario12', 'Contraseña12', 0.00, 'user'),
+(13, 'Usuario13', 'Contraseña13', 0.00, 'user'),
+(14, 'Usuario14', 'Contraseña14', 0.00, 'user'),
+(15, 'Usuario15', 'Contraseña15', 0.00, 'user'),
+(21, 'ianalan', 'contraseña', 0.00, 'user'),
+(22, '1', '1', 3000.00, 'user');
+
+INSERT INTO `usuario` (`id_usuario`, `usuario`, `contrasenia`, `dinero`, `rol`) VALUES
+(23, 'admin', '1234', 0.00, 'admin');
 
 --
 -- Índices para tablas volcadas

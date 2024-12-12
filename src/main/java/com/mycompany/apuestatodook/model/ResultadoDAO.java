@@ -50,7 +50,7 @@ public class ResultadoDAO {
         Resultado resultado = null;
         try(Session session = HibernateUtil.getSessionFactory().getCurrentSession() ){
             session.beginTransaction();
-            resultado = session.createQuery("FROM Resultado WHERE fk_id_partido = ?1", Resultado.class)
+            resultado = session.createQuery("FROM Resultado WHERE idPartido = ?1", Resultado.class)
                     .setParameter(1, idPartido)
                     .getSingleResultOrNull();
             session.getTransaction().commit();
@@ -79,7 +79,7 @@ public class ResultadoDAO {
      public int getIdResultadoByIdPartido(int idPartido) {
         try(Session session = HibernateUtil.getSessionFactory().getCurrentSession() ){
             session.beginTransaction();
-            int id = session.createQuery("SELECT idResultado FROM Resultado WHERE fk_id_partido = ?1", int.class)
+            int id = session.createQuery("SELECT idResultado FROM Resultado WHERE idPartido = ?1", int.class)
                     .setParameter(1, idPartido)
                     .getSingleResult();
             

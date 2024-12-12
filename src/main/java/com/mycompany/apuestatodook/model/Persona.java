@@ -30,6 +30,7 @@ public class Persona {
     @Column(length=255)
     private String apellido;
     private int edad;
+    @Column(name="fk_id_usuario")
     private int fk_id_ususario;
 
     public String getDni() {
