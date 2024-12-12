@@ -1,8 +1,6 @@
 
 package com.mycompany.apuestatodook.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,17 +25,6 @@ public class PersonaDAO {
         } catch(Exception ex){
             throw new RuntimeException(ex);
         }
-//        String query = "INSERT INTO persona ( nombre, apellido, edad, dni, fk_id_usuario) VALUES (? , ?, ?, ?, ?)";
-//        try (Connection con = ConnectionPool.getInstance().getConnection(); PreparedStatement preparedStatement = con.prepareStatement(query)) {
-//            preparedStatement.setString(1, nombre);
-//            preparedStatement.setString(2, apellido);
-//            preparedStatement.setInt(3, edad);
-//            preparedStatement.setString(4, dni);
-//            preparedStatement.setInt(5, idUsuario);
-//            preparedStatement.executeUpdate();
-//        } catch (SQLException ex) {
-//            throw new RuntimeException(ex);
-//        }
     }
     
     public Persona getPersonaPorId(Integer Id) {
@@ -53,22 +40,9 @@ public class PersonaDAO {
             throw new RuntimeException(ex);
         }
         return persona;
-//        String query = "SELECT * FROM persona WHERE fk_id_usuario = ?";
-//        Persona persona = null;
-//        try (Connection con = ConnectionPool.getInstance().getConnection(); PreparedStatement preparedStatement = con.prepareStatement(query)) {
-//            preparedStatement.setInt(1, Id);
-//            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-//                if (resultSet.next()) {
-//                    persona = rsRowToPersona(resultSet);
-//                }
-//            }
-//        } catch (SQLException ex) {
-//            throw new RuntimeException(ex);
-//        }
-//        return persona;
     }
 
-        private Persona rsRowToPersona(ResultSet rs) throws SQLException {
+    private Persona rsRowToPersona(ResultSet rs) throws SQLException {
        int id_persona = rs.getInt(1);
        String dni = rs.getString(2);
        String nombre = rs.getString(3);
@@ -79,5 +53,5 @@ public class PersonaDAO {
        return new Persona(id_persona, dni, nombre, apellido, edad, fk_usuario) ;
     }
 
-    }
+}
     
